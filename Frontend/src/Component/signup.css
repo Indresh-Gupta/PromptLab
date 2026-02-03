@@ -1,0 +1,75 @@
+/* Whole page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form box */
+form {
+  background: #ffffff;
+  padding: 30px 35px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+form h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Labels */
+form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Login & Signup input fix */
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+
+  color: #000 !important;        
+  background-color: #fff !important;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-container input::placeholder {
+  color: #777;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Button */
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #667eea;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #5a67d8;
+}

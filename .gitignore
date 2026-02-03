@@ -1,0 +1,23 @@
+# Root
+.env
+node_modules/
+dist/
+build/
+
+# React frontend
+/Frontend/node_modules/
+Frontend/build/
+
+# Backend
+/Backend/node_modules/
+
+# Logs and temp
+*.log
+logs/
+.cache/
+.tmp/
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
