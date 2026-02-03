@@ -53,7 +53,7 @@ function Login() {
     return ( <>
     <div className="auth-container">
     <form onSubmit={submitHandler}>
-        <h1>this is login page </h1>
+        <h1>This is login page </h1>
            <label htmlFor="email">Email</label>  
           <input type="text" placeholder="Enter your email" id="email" name="email" onChange={inputHandler} />
           <br></br><br></br>
