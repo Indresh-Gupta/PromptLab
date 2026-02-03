@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import {ScaleLoader} from "react-spinners";
+import server from "./environment.js"
 
 function ChatWindow() {
     const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat} = useContext(MyContext);
@@ -28,7 +29,7 @@ function ChatWindow() {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/api/chat", options);
+            const response = await fetch(`${server}/api/chat`, options);
             const res = await response.json();
             console.log(res);
             setReply(res.reply);
@@ -62,7 +63,7 @@ function ChatWindow() {
       const navigate=useNavigate()
     const logout = async () => {
   try {
-    await axios.post("http://localhost:8080/logout", {}, { withCredentials: true });
+    await axios.post(`${server}/logout`, {}, { withCredentials: true });
 
     // 🔥 CLEAR LOCAL STORAGE
     localStorage.removeItem("token");

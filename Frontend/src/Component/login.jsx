@@ -2,6 +2,7 @@ import react from "react"
 import { useNavigate } from 'react-router-dom';
 import {useState} from "react";
 import "./login.css";
+import server from "../environment.js"
 
 
 
@@ -26,7 +27,7 @@ function Login() {
             return console.log("user not enter correct data");
         }
         try{
-           const url="http://localhost:8080/login"
+           const url=`${server}/login`
           const response=await fetch(url, {
             method:"Post",
            headers:{
