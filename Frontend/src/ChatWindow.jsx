@@ -1,5 +1,7 @@
 import "./ChatWindow.css";
 import Chat from "./Chat.jsx";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import {ScaleLoader} from "react-spinners";
@@ -57,6 +59,24 @@ function ChatWindow() {
     const handleProfileClick = () => {
         setIsOpen(!isOpen);
     }
+      const navigate=useNavigate()
+    const logout = async () => {
+  try {
+    await axios.post("http://localhost:8080/logout", {}, { withCredentials: true });
+
+    // 🔥 CLEAR LOCAL STORAGE
+    localStorage.removeItem("token");
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("english_practice_chat"); // if chat stored
+
+    // OR clear everything
+    // localStorage.clear();
+
+    navigate("/");
+  } catch (err) {
+    console.log("Logout failed", err);
+  }
+};
 
     return (
         <div className="chatWindow">
@@ -71,7 +91,7 @@ function ChatWindow() {
                 <div className="dropDown">
                     <div className="dropDownItem"><i class="fa-solid fa-gear"></i> Settings</div>
                     <div className="dropDownItem"><i class="fa-solid fa-cloud-arrow-up"></i> Upgrade plan</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
+                    <div className="dropDownItem" onClick={logout}><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
                 </div>
             }
             <Chat></Chat>

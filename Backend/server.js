@@ -12,7 +12,12 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.get("/ping", (req, res) => {
   res.send("pong");
