@@ -38,8 +38,12 @@ if(!isPass){
     )
     console.log(jwtToken);
     res.status(200).json({msg:'you login successfully' ,email, jwtToken, name:user.name, success:true});
-} catch(err){
-    res.status(500).json({msg:"internal server eroor", err});
+} catch (err) {
+  console.error("🔥 AUTH ERROR:", err);   // ⭐ VERY IMPORTANT
+  res.status(500).json({
+    msg: "internal server error",
+    error: err.message
+  });
 }
     
 }
