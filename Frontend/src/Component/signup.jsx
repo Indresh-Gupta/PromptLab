@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {useState} from "react";
 import "./signup.css";
 import axios from "axios";
-import server from "../environment.js"
+
 
 function Signup() {
     const [formData, setFormData]=useState({

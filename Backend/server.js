@@ -12,23 +12,19 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://promptlabfrontend.onrender.com"
+  ],
+  credentials: true
+}));
 
-app.get("/ping", (req, res) => {
-  res.send("pong");
-});
-app.use("/", userRoutes);
-app.use("/api", chatRoutes);
-
-app.listen(PORT, () => {
-    console.log(`server running on ${PORT}`);
-    connectDB();
-});
+// app.use(cors({
+//   origin: "*", // for testing only
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true
+// }));
 
 const connectDB = async() => {
     try {
@@ -40,6 +36,19 @@ const connectDB = async() => {
 }
 
 
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+app.use("/", userRoutes);
+app.use("/api", chatRoutes);
+
+
+
+
+app.listen(PORT, () => {
+    console.log(`server running on ${PORT}`);
+    connectDB();
+});
 // app.post("/test", async (req, res) => {
 //     const options = {
 //         method: "POST",

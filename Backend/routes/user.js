@@ -4,7 +4,7 @@ import {signup, login, logoutUser} from "../Controller/user.js";
 import {signupValidation, loginValidation} from "../Middleware/Schema.js";
 
 router.post("/signup",signupValidation, signup);
-router.post("/login", loginValidation, login);
+router.post("/", loginValidation, login);
 router.post("/logout", logoutUser)
 
 export default router;
