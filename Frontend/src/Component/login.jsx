@@ -2,6 +2,7 @@ import react from "react"
 import { useNavigate } from 'react-router-dom';
 import {useState} from "react";
 import "./login.css";
+import SERVER from "../config/server";
 
 
 
@@ -50,6 +51,13 @@ function Login() {
           return  console.log("this is server side error", err);
         }
     }
+
+    
+
+fetch(`${SERVER}/ping`)
+  .then(res => res.text())
+  .then(data => console.log(data));
+
 
     return ( <>
     <div className="auth-container">

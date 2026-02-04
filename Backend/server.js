@@ -12,13 +12,19 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(bodyParser.json());
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://promptlabfrontend.onrender.com"
+//   ],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://promptlabfrontend.onrender.com"
-  ],
+  origin: true,
   credentials: true
 }));
+
 
 // app.use(cors({
 //   origin: "*", // for testing only
