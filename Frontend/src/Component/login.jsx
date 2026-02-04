@@ -27,7 +27,7 @@ function Login() {
             return console.log("user not enter correct data");
         }
         try{
-           const url=`${server}/login`
+           const url="https://promptlabbackend-7bqp.onrender.com/"
           const response=await fetch(url, {
             method:"Post",
            headers:{

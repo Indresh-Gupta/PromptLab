@@ -29,7 +29,7 @@ function ChatWindow() {
         };
 
         try {
-            const response = await fetch(`${server}/api/chat`, options);
+            const response = await fetch("https://promptlabbackend-7bqp.onrender.com/api/chat", options);
             const res = await response.json();
             console.log(res);
             setReply(res.reply);
@@ -63,7 +63,7 @@ function ChatWindow() {
       const navigate=useNavigate()
     const logout = async () => {
   try {
-    await axios.post(`${server}/logout`, {}, { withCredentials: true });
+    await axios.post("https://promptlabbackend-7bqp.onrender.com/logout", {}, { withCredentials: true });
 
     // 🔥 CLEAR LOCAL STORAGE
     localStorage.removeItem("token");

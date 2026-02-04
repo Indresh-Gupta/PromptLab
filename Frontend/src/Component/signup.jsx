@@ -19,7 +19,7 @@ function Signup() {
 
     const submitHandler=async(e)=>{
     e.preventDefault();
-       await axios.post(`${server}/signup`, formData)
+       await axios.post("https://promptlabbackend-7bqp.onrender.com/signup", formData)
         .then((response)=>{
             console.log(response);
             navigator("/home");
