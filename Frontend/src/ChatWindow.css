@@ -124,3 +124,126 @@ input:focus {
     background-color: rgba(180, 180, 180, 0.1);
     border-radius: 6px;
 }
+
+/* ============================= */
+/* 💻 Laptop */
+/* ============================= */
+@media (max-width: 1200px){
+  .navbar span{
+    margin: 1rem;
+  }
+
+  .userIconDiv{
+    margin: 1rem;
+  }
+
+  .inputBox{
+    max-width: 90%;
+  }
+
+  .dropDown{
+    right: 2rem;
+  }
+}
+
+
+/* ============================= */
+/* 📱 Tablet */
+/* ============================= */
+@media (max-width: 768px){
+
+  .navbar span{
+    font-size: 0.9rem;
+    margin: 0.8rem;
+  }
+
+  .userIconDiv{
+    margin: 0.8rem;
+  }
+
+  .inputBox{
+    max-width: 95%;
+  }
+
+  input{
+    padding: 16px;
+    font-size: 0.85rem;
+  }
+
+  #submit{
+    height: 32px;
+    width: 32px;
+    font-size: 18px;
+  }
+
+  .dropDown{
+    top: 3.5rem;
+    right: 1rem;
+  }
+
+  .info{
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+/* ============================= */
+/* 📱 Mobile */
+/* ============================= */
+@media (max-width: 480px){
+
+  .navbar span{
+    font-size: 0.85rem;
+    margin: 0.7rem;
+  }
+
+  .userIconDiv{
+    margin: 0.7rem;
+  }
+
+  .userIcon{
+    height: 22px;
+    width: 22px;
+    font-size: 12px;
+  }
+
+  .inputBox{
+    max-width: 92%;
+  }
+
+  input{
+    padding: 14px;
+    font-size: 0.8rem;
+  }
+
+  #submit{
+    height: 28px;
+    width: 28px;
+    font-size: 16px;
+    right: 12px;
+  }
+
+  .info{
+    font-size: 0.7rem;
+  }
+
+  .dropDown{
+    width: 140px;
+    right: 0.8rem;
+  }
+}
+
+/* Mobile menu icon */
+/* .mobileMenu{
+  display:none;
+  font-size:18px;
+  cursor:pointer;
+}
+
+@media (max-width:500px){
+  .mobileMenu{
+    display:block;
+  }
+} */

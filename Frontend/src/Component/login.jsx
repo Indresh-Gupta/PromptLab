@@ -54,9 +54,6 @@ function Login() {
 
     
 
-fetch(`${SERVER}/ping`)
-  .then(res => res.text())
-  .then(data => console.log(data));
 
 
     return ( <>

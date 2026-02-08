@@ -85,3 +85,78 @@ button:hover {
     background-color: rgba(180, 180, 180, 0.05);
     border-radius: 10px;
 }
+
+/* ============================= */
+/* RESPONSIVE SIDEBAR */
+/* ============================= */
+
+/* hide menu icon on desktop (shown in navbar css) */
+.menuIcon {
+  display: none;
+}
+
+/* overlay background when sidebar opens */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 998;
+  display: none;
+}
+
+/* -------- TABLET -------- */
+@media (max-width: 800px) {
+  .sidebar {
+    width: 260px;   /* slightly smaller */
+  }
+}
+
+/* -------- MOBILE -------- */
+@media (max-width: 500px) {
+
+  .menuIcon {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;          /* hidden by default */
+    width: 260px;
+    z-index: 999;
+    transition: left 0.3s ease;
+  }
+
+  /* when opened */
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebarOverlay.show {
+    display: block;
+  }
+}
+
+/* -------- SMALL MOBILE -------- */
+@media (max-width: 480px) {
+
+  .sidebar {
+    width: 230px;
+    left: -230px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  button span {
+    font-size: 16px;
+  }
+
+  .history li {
+    font-size: 13px;
+  }
+}

@@ -1,53 +1,61 @@
-/* Whole page */
+/* Reset */
+*{
+  box-sizing:border-box;
+}
+
+/* Background */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+/* Center container instead of body */
+.auth-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 }
 
 /* Form box */
 form {
   background: #ffffff;
-  padding: 30px 35px;
-  width: 380px;
-  border-radius: 10px;
+  padding: 35px 32px;
+  width: 100%;
+  max-width: 380px;   /* responsive fix */
+  border-radius: 12px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 /* Heading */
 form h1 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   color: #333;
 }
 
 /* Labels */
 form label {
+  display:block;
+  margin-top:15px;
+  margin-bottom:6px;
   font-size: 14px;
   font-weight: bold;
   color: #555;
 }
 
-/* Login & Signup input fix */
+/* Inputs */
 .auth-container input {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-
-  color: #000 !important;        
-  background-color: #fff !important;
-
+  color: #000;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-.auth-container input::placeholder {
-  color: #777;
 }
 
 .auth-container input:focus {
@@ -67,9 +75,26 @@ form button {
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 form button:hover {
   background: #5a67d8;
+}
+
+/* 📱 Tablet */
+@media (max-width:768px){
+  form{
+    padding:28px 24px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width:480px){
+  form{
+    padding:24px 18px;
+  }
+
+  form h1{
+    font-size:22px;
+  }
 }

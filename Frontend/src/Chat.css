@@ -39,3 +39,62 @@
  pre {
     white-space: pre-wrap;
 }
+
+/* ============================= */
+/* 💻 Laptop screens */
+/* ============================= */
+@media (max-width: 1200px) {
+  .chats {
+    max-width: 90%;
+    padding: 6rem 3rem;
+  }
+
+  .userMessage {
+    margin-left: 8rem;
+    max-width: 75%;
+  }
+}
+
+
+/* ============================= */
+/* 📱 Tablet */
+/* ============================= */
+@media (max-width: 768px) {
+  .chats {
+    max-width: 100%;
+    padding: 5rem 1.5rem 6rem 1.5rem;
+  }
+
+  .userMessage {
+    margin-left: auto;   /* push bubble right correctly */
+    max-width: 85%;
+  }
+
+  .userDiv, .gptDiv {
+    font-size: 0.9rem;
+  }
+
+  pre {
+    overflow-x: auto;   /* prevent code overflow */
+  }
+}
+
+
+/* ============================= */
+/* 📱 Mobile */
+/* ============================= */
+@media (max-width: 480px) {
+  .chats {
+    padding: 5rem 0.8rem 6rem 0.8rem;
+  }
+
+  .userMessage {
+    max-width: 90%;
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+
+  .userDiv, .gptDiv {
+    font-size: 0.85rem;
+  }
+}
